@@ -38,7 +38,7 @@ body{
 
 #TeamToevoegenKnop{
     margin: auto 10px auto auto;
-    padding: 5px;
+    padding: 10px;
     min-width: 175px;
     height: 40px;
     background-color: #191b1c;
@@ -84,21 +84,124 @@ padding: auto;
 #balk{
     width: 100%;
     height: 1px;
-    background-color: #d60707;
+    background-color: #65252d;
 }
 
-#team-container{
- display: column;
- template-columns: 350px 350px 350px 350px;
- width: 100%;
-    height: auto;
- min-height: 600px;
- padding: 10px;
- background-color: #06ffff;
+#team-container {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+
+    width: 100%;
+    min-height: 600px;
+    margin-top: 50px;
+    padding: 30px;
+
+    background-color: #000000;
 }
 
-#restaurant1{
-    width: 350px;
+.restaurant{
+    width: 300px;
     height: 500px;
-    background-color: #0fee59;
+    padding: 20px;
+    background-color: #191b1c;
+    border: 1.7px solid #65252d;
+    border-radius: 6px;
+}
+
+.restaurant-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0;
+}
+
+.imageblok {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background-color: #b42d3c;
+    border-radius: 5px;
+}
+
+.imageblok img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.Teamnamen {
+    margin: 55px 0 0 2px;
+}
+
+.Teamnamen p {
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+@media (max-width: 560px) {
+    #Koptekst {
+        display: block;
+        height: auto;
+        padding: 10px;
+    }
+
+    #Koptekst h1 {
+        padding-left: 0;
+        font-size: 28px;
+    }
+
+    #Koptekst p {
+        padding-left: 0;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    #TeamToevoegenKnop {
+        width: 100%;
+        min-width: 0;
+        margin: 10px 0 0 0;
+    }
+}
+
+@media (max-width: 560px) {
+    #TeamStats {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 10px;
+    }
+
+    #teamstat1,
+    #teamstat2 {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 1400px) { 
+    #team-container{
+        grid-template-columns: 300px 300px;
+    } 
+}
+
+@media (max-width: 700px) {
+    #team-container {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+    }
+
+    .restaurant {
+        width: 100%;
+        max-width: 300px;
+    }
 }
