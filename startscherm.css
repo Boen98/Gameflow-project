@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(0, 40%, 5%);
+}
+
+.vakje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-color: hsl(0, 100%, 40%);
+  border-radius: 16px;
+  border-width: 0.5px;
+  width: 350px;
+  padding: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #191b1c;
+  height: 400px;
+}
+
+.logo,
+.invoer {
+  display: flex;
+  flex-direction: column;
+}
+
+.invoercontainer {
+  display: flex;
+  padding-bottom: 10px;
+  margin: auto;
+  padding-left: 10px;
+  width: 200px;
+}
+
+.gamenaam {
+  color: white;
+  text-align: center;
+  flex-direction: row;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
+
+.invoer {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+#titeldeel {
+  opacity: 40%;
+}
+
+.verderbutton {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+button {
+  border-style: none;
+  border-radius: 16px;
+  color: white;
+  background-color: hsl(1, 62%, 43%);
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+  max-height: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
