@@ -17,7 +17,7 @@ body{
     gap: 10px;
     align-items: center;
     height: 100px;
-    background-color: #d60707;
+    background-color: #191b1c;
     color: white;
     font-size: 30px;
 }
@@ -41,11 +41,16 @@ body{
     padding: 10px;
     min-width: 175px;
     height: 40px;
-    background-color: #191b1c;
-    border: 2px solid #07090a;
+    background-color: #ad293e;
+    border: 2px solid #ad293e;
     color: #FFFFFF;
     font-size:  20px;
     border-radius: 5px;
+}
+
+#TeamToevoegenKnop:hover {
+    background-color: #dd4a60;
+    border-color: #dd4a60;
 }
 
 #TeamStats {
@@ -116,6 +121,8 @@ padding: auto;
     align-items: center;
     gap: 18px;
     margin: 0;
+    position: relative;
+    width: 100%;
 }
 
 .imageblok {
@@ -137,6 +144,25 @@ padding: auto;
     margin: 0;
     color: #ffffff;
     font-size: 30px;
+}
+
+.team-sluiten{
+    min-width: 80px;
+    height: 60px;
+    font-size: 40px;
+    color: #d60707;
+    background-color: transparent;
+    border:0px;
+
+     position: absolute;
+    right: 10px; 
+    top: -25px;               
+    transform: translatex(50%);
+}
+
+.team-sluiten:hover {
+    color: #ec6a7d;
+
 }
 
 .Teamnamen {
