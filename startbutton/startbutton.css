@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(200, 6%, 7%);
+}
+
+.vakje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-color: hsl(0, 100%, 40%);
+  border-radius: 16px;
+  border-width: 0.5px;
+  width: 350px;
+  padding: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: fit-content;
+  background-color: #191b1c;
+  justify-content: space-between;
+  padding: 40px;
+}
+
+.gamenaam {
+  color: white;
+  text-align: center;
+  flex-direction: row;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
+
+.startbutton {
+  background-color: hsl(0, 100%, 40%);
+  color: white;
+  width: 200px;
+  height: 40px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  border-style: none;
+  margin-bottom: 40px;
+  transition: 0.5s;
+}
+
+.startbutton:hover {
+  color: black;
+  transform: scale(1.05);
+}
