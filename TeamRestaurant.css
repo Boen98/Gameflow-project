@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #101312;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    border-bottom: 1px solid #65252d;
+}
+
+h1 {
+    margin: 0 auto;
+    padding: 16px 24px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+#eigen-Restaurant {
+    display: flex;
+    flex-direction: column;
+
+    width: 400px;
+    max-width: 100%;
+    min-height: 550px;
+    height: auto;
+    padding: 22px;
+
+    background: #1b1b1b;
+    border: 1px solid #48232a;
+    border-radius: 14px;
+}
+
+
+#restaurant-header,
+#restaurant-naam {
+    display: flex;
+    align-items: center;
+}
+
+#restaurant-header {
+    gap: 18px;
+}
+
+#restaurant-naam {
+    gap: 6px;
+    min-width: 0;
+}
+
+#restaurant-name {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+}
+
+button {
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+.icon-edit-btn {
+    width: 64px;
+    height: 64px;
+
+    background: #f4483b;
+    color: white;
+    border-radius: 9px;
+    font-size: 34px;
+}
+
+/* Klein potlood */
+.edit-btn {
+    padding: 4px;
+    background: transparent;
+    color: #b52b42;
+    font-size: 24px;
+}
+
+#save-changes {
+    margin-top: auto;
+    padding: 14px;
+
+    background: #b52b42;
+    color: white;
+    border-radius: 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
