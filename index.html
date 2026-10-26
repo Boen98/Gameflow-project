@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panda Restaurant: inlogprototype voor spelers en spelleiders." />
+    <title>Inloggen | Panda Restaurant</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="layout">
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="brand brand--light">
+          <span class="brand__icon" aria-hidden="true">🐼</span>
+          <span>Panda Restaurant</span>
+        </div>
+
+        <div class="intro__content">
+          <p class="eyebrow">GAMEFLOW · BUSINESS SIMULATION</p>
+          <h1 id="intro-title">Jij maakt de keuzes.<br />Het restaurant reageert.</h1>
+          <p class="intro__description">
+            Ontdek hoe prijs, personeel en marketing invloed hebben op
+            de resultaten van jouw restaurant.
+          </p>
+          <div class="highlights" aria-label="Onderdelen van de simulatie">
+            <span>Strategische keuzes</span>
+            <span>Meerdere rondes</span>
+            <span>KPI's en resultaten</span>
+          </div>
+        </div>
+
+        <p class="intro__footer">HBO-ICT · Website Project · Prototype</p>
+      </section>
+
+      <section class="login-area" aria-labelledby="login-title">
+        <div class="login-card">
+          <div class="brand brand--small">
+            <span class="brand__icon" aria-hidden="true">🐼</span>
+            <span>Panda Restaurant</span>
+          </div>
+
+          <p class="eyebrow eyebrow--green">WELKOM TERUG</p>
+          <h2 id="login-title">Inloggen</h2>
+          <p class="subtitle">Log in om jouw simulatie te bekijken.</p>
+
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label for="email">E-mailadres</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="naam@voorbeeld.nl"
+                autocomplete="username"
+                inputmode="email"
+                required
+                aria-describedby="emailError"
+              />
+              <p class="field-error" id="emailError" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="password">Wachtwoord</label>
+              <div class="password-control">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Vul je wachtwoord in"
+                  autocomplete="current-password"
+                  required
+                  aria-describedby="passwordError"
+                />
+                <button
+                  class="password-toggle"
+                  type="button"
+                  id="togglePassword"
+                  aria-label="Wachtwoord tonen"
+                  aria-pressed="false"
+                  aria-controls="password"
+                >
+                  Tonen
+                </button>
+              </div>
+              <p class="field-error" id="passwordError" aria-live="polite"></p>
+            </div>
+
+            <button class="submit-button" type="submit">Inloggen <span aria-hidden="true">→</span></button>
+            <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
+          </form>
+
+          <p class="login-note">
+            Voor spelers en spelleiders. De gebruikersrol wordt later door de backend bepaald.
+          </p>
+        </div>
+        <p class="demo-notice">Frontend-demo · Nog niet gekoppeld aan een authenticatie-API</p>
+      </section>
+    </main>
+  </body>
+</html>
