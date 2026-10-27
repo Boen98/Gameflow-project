@@ -6,6 +6,8 @@ public static class TeamEndpoints
 
         teams.MapPostTeamEndpoint();
         teams.MapGetTeamEndpoint();
+        teams.MapGetTeamsEndpoint();
+        teams.MapDeleteTeamEndpoint();
         
         return teams;
     }

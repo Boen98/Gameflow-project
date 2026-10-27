@@ -44,4 +44,26 @@ public class EfTeamStore : ITeamStore
 
           return await _db.teams.Include(team => team.Leden).FirstOrDefaultAsync(team => team.Id == id);
     }
+
+    public async Task<List<Team>> GetTeams(int id)
+    {
+        return await _db.teams.Include(team => team.Leden).ToListAsync();
+    }
+    
+    public async Task <bool> DeleteTeam(int teamid)
+    {
+        var team = await _db.teams.FirstOrDefaultAsync(team => team.Id == teamid);
+
+        if (team is null)
+        {
+            return false;
+        }
+            
+        _db.Remove(team);
+        await _db.SaveChangesAsync();
+        return true;
+
+    }
+  
 }
+
