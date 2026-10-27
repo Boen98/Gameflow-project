@@ -5,6 +5,7 @@ public static class TeamEndpoints
         var teams = app.MapGroup("/teams");
 
         teams.MapPostTeamEndpoint();
+        teams.MapGetTeamEndpoint();
         
         return teams;
     }
