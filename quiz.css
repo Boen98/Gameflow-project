@@ -31,16 +31,22 @@ span {
 }
 .antwoorden-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+.button {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
 }
 .linksboven,
 .linksonder,
 .rechtsboven,
 .rechtsonder {
   background-color: #191b1c;
-  width: 680px;
-  height: 200px;
+  width: 100%;
+  min-height: 200px;
+  height: auto;
   box-sizing: border-box;
 }
 .button:hover {
@@ -51,4 +57,17 @@ span {
     background-color: darkred;
   }
   background-color: darkred;
+}
+@media (max-width: 900px) {
+  .antwoorden-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .antwoorden-grid {
+    gap: 0.75rem;
+  }
+  h2 {
+    padding-left: 1rem;
+  }
 }
