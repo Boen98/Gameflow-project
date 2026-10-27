@@ -1,0 +1,54 @@
+h1 {
+  text-align: center;
+  color: white;
+}
+body {
+  background-color: hsl(200, 6%, 7%);
+}
+.button {
+  border: none;
+  background-color: #191b1c;
+  cursor: pointer;
+}
+h2 {
+  color: white;
+  text-align: left;
+  padding-left: 35px;
+}
+h3 {
+  color: white;
+}
+span {
+  float: left;
+  background-color: red;
+  color: white;
+  border-style: solid;
+  border-color: red;
+  border-width: 7px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.antwoorden-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.linksboven,
+.linksonder,
+.rechtsboven,
+.rechtsonder {
+  background-color: #191b1c;
+  width: 680px;
+  height: 200px;
+  box-sizing: border-box;
+}
+.button:hover {
+  .linksboven,
+  .linksonder,
+  .rechtsboven,
+  .rechtsonder {
+    background-color: darkred;
+  }
+  background-color: darkred;
+}
