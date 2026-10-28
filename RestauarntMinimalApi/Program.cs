@@ -1,10 +1,10 @@
-using Microsoft.EntityFrameworkCore.Storage;
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddValidation();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ITeamStore, EfTeamStore>();
+builder.Services.AddScoped<IGameSessieStore, EfGameSessieStore>();
+
 
 var connectionString = builder.Configuration.GetConnectionString("Database");
     builder.Services.AddSqlServer<GameFlowDb>(connectionString);
@@ -19,4 +19,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapTeamEndpoints();
+app.MapGameSessiesEndpoints();
 app.Run();

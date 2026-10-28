@@ -11,6 +11,24 @@ namespace RestauarntMinimalApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "gameSessies",
+                columns: table => new
+                {
+                    GameSessieId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GameStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StartSituatieTijd = table.Column<int>(type: "int", nullable: false),
+                    AantalIngesteldeRondes = table.Column<int>(type: "int", nullable: false),
+                    TijdVoorRondesInMinuten = table.Column<int>(type: "int", nullable: false),
+                    IngesteldeAantalTeams = table.Column<int>(type: "int", nullable: false),
+                    IngesteldeAantalSpelersPerTeam = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_gameSessies", x => x.GameSessieId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "teams",
                 columns: table => new
                 {
@@ -18,11 +36,18 @@ namespace RestauarntMinimalApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Teamnaam = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Afbeelding = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Alt = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Alt = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GameSessieId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_teams", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_teams_gameSessies_GameSessieId",
+                        column: x => x.GameSessieId,
+                        principalTable: "gameSessies",
+                        principalColumn: "GameSessieId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,6 +74,11 @@ namespace RestauarntMinimalApi.Migrations
                 name: "IX_TeamLid_TeamId",
                 table: "TeamLid",
                 column: "TeamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_teams_GameSessieId",
+                table: "teams",
+                column: "GameSessieId");
         }
 
         /// <inheritdoc />
@@ -59,6 +89,9 @@ namespace RestauarntMinimalApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "teams");
+
+            migrationBuilder.DropTable(
+                name: "gameSessies");
         }
     }
 }

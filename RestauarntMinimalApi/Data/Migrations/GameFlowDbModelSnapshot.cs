@@ -20,6 +20,38 @@ namespace RestauarntMinimalApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("GameSessie", b =>
+                {
+                    b.Property<int>("GameSessieId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GameSessieId"));
+
+                    b.Property<int>("AantalIngesteldeRondes")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GameStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IngesteldeAantalSpelersPerTeam")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IngesteldeAantalTeams")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StartSituatieTijd")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TijdVoorRondesInMinuten")
+                        .HasColumnType("int");
+
+                    b.HasKey("GameSessieId");
+
+                    b.ToTable("gameSessies");
+                });
+
             modelBuilder.Entity("Team", b =>
                 {
                     b.Property<int>("Id")
@@ -36,11 +68,22 @@ namespace RestauarntMinimalApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("GameSessieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Teamcode")
+                        .IsRequired()
+                        .HasMaxLength(4)
+                        .HasColumnType("nvarchar(4)");
+
                     b.Property<string>("Teamnaam")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GameSessieId", "Teamcode")
+                        .IsUnique();
 
                     b.ToTable("teams");
                 });
@@ -67,6 +110,15 @@ namespace RestauarntMinimalApi.Migrations
                     b.ToTable("TeamLid");
                 });
 
+            modelBuilder.Entity("Team", b =>
+                {
+                    b.HasOne("GameSessie", null)
+                        .WithMany("GekopeldeTeams")
+                        .HasForeignKey("GameSessieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("TeamLid", b =>
                 {
                     b.HasOne("Team", null)
@@ -74,6 +126,11 @@ namespace RestauarntMinimalApi.Migrations
                         .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GameSessie", b =>
+                {
+                    b.Navigation("GekopeldeTeams");
                 });
 
             modelBuilder.Entity("Team", b =>

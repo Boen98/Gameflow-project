@@ -1,6 +1,6 @@
 public interface ITeamStore
 {
-    Task<List<Team>> Post(int aantalTeams, int aantalLeden);
+    Task<List<Team>> Post(int aantalTeams, int aantalLeden, int gamesessieid);
 
     Task<Team?> GetTeam(int id);
 
