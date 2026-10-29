@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="registratie.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Registreren | Panda Restaurant Sim</title>
+  </head>
+
+
+  <body>
+    <header id="Koptekst">
+      <h1>Panda Restaurant Sim</h1>
+    </header>
+
+
+    <main>
+      <div class="registratiecontainer">
+        <header class="logo">
+          <h2>Nieuw personeelsaccount</h2>
+          <p>Maak een account aan en koppel deze aan een bedrijf.</p>
+        </header>
+
+
+        <form id="registratieformulier" action="/registreren" method="post">
+          <div class="vakje">
+            <fieldset>
+              <legend>Persoonsgegevens</legend>
+
+
+              <div class="naamvelden">
+                <div class="invoercontainer">
+                  <label for="voornaam">Voornaam <span>*</span></label>
+                  <input
+                    id="voornaam"
+                    name="voornaam"
+                    type="text"
+                    placeholder="Voer voornaam in"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+
+
+                <div class="invoercontainer">
+                  <label for="achternaam">Achternaam <span>*</span></label>
+                  <input
+                    id="achternaam"
+                    name="achternaam"
+                    type="text"
+                    placeholder="Voer achternaam in"
+                    autocomplete="family-name"
+                    required
+                  />
+                </div>
+              </div>
+
+
+              <div class="invoercontainer">
+                <label for="personeelsnummer">
+                  Personeelsnummer <span>*</span>
+                </label>
+                <input
+                  id="personeelsnummer"
+                  name="personeelsnummer"
+                  type="text"
+                  placeholder="Bijvoorbeeld: 10245"
+                  aria-describedby="nummerhulp"
+                  required
+                />
+                <small id="nummerhulp">
+                  Moet uniek zijn binnen het systeem.
+                </small>
+              </div>
+            </fieldset>
+
+
+            <fieldset>
+              <legend>Bedrijfskoppeling</legend>
+
+
+              <div class="invoercontainer">
+                <label for="bedrijf">Bedrijf <span>*</span></label>
+                <select id="bedrijf" name="bedrijf" required>
+                  <option value="" disabled selected>
+                    Selecteer een bedrijf
+                  </option>
+                  <!-- Vervang deze voorbeelden door je eigen bedrijven. -->
+                  <option value="bedrijf-1">Bedrijf 1</option>
+                  <option value="bedrijf-2">Bedrijf 2</option>
+                </select>
+              </div>
+            </fieldset>
+
+
+            <fieldset class="inloggegevens">
+              <legend>Inloggegevens</legend>
+
+
+              <div class="invoercontainer">
+                <label for="wachtwoord">Wachtwoord <span>*</span></label>
+
+
+                <div class="wachtwoordveld">
+                  <input
+                    id="wachtwoord"
+                    name="wachtwoord"
+                    type="password"
+                    placeholder="Maak een wachtwoord aan"
+                    autocomplete="new-password"
+                    minlength="8"
+                    pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}"
+                    title="Gebruik minimaal 8 tekens, één hoofdletter en één cijfer."
+                    aria-describedby="wachtwoordhulp"
+                    required
+                  />
+                  <button
+                    class="toonwachtwoord"
+                    type="button"
+                    aria-controls="wachtwoord"
+                    aria-label="Wachtwoord tonen"
+                    aria-pressed="false"
+                  >
+                    Toon
+                  </button>
+                </div>
+
+
+                <small id="wachtwoordhulp">
+                  Minimaal 8 tekens, één hoofdletter en één cijfer.
+                </small>
+              </div>
+
+
+              <div class="invoercontainer">
+                <label for="bevestiging">
+                  Wachtwoord bevestigen <span>*</span>
+                </label>
+
+
+                <div class="wachtwoordveld">
+                  <input
+                    id="bevestiging"
+                    name="wachtwoordbevestiging"
+                    type="password"
+                    placeholder="Herhaal het wachtwoord"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <button
+                    class="toonwachtwoord"
+                    type="button"
+                    aria-controls="bevestiging"
+                    aria-label="Wachtwoordbevestiging tonen"
+                    aria-pressed="false"
+                  >
+                    Toon
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <div class="verderbutton">
+            <a class="knop annuleren" href="inloggen.html">Annuleren</a>
+            <button class="knop" type="submit">Account aanmaken</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

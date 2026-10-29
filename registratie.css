@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  background-color: hsl(0, 40%, 5%);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+main {
+  padding: 50px 20px;
+}
+
+
+.registratiecontainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.logo {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.gamenaam {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+
+.titeldeel {
+  opacity: 0.4;
+}
+
+
+h2 {
+  margin: 25px 0 10px;
+  font-size: 24px;
+}
+
+
+.logo p {
+  color: #b8b8b8;
+  line-height: 1.5;
+}
+
+
+.vakje {
+  padding: 35px;
+  border: 0.5px solid hsl(0, 100%, 40%);
+  border-radius: 16px;
+  background-color: #191b1c;
+}
+
+
+fieldset {
+  min-width: 0;
+  margin: 0 0 30px;
+  padding: 0;
+  border: none;
+}
+
+
+fieldset:last-child {
+  margin-bottom: 0;
+}
+
+
+legend {
+  margin-bottom: 22px;
+  padding: 0;
+  color: #b8b8b8;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.naamvelden {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+
+.invoercontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+
+fieldset > .invoercontainer:last-child {
+  margin-bottom: 0;
+}
+
+
+label {
+  font-size: 15px;
+}
+
+
+label span {
+  color: #ff6565;
+}
+
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  color: #191b1c;
+  font: inherit;
+}
+
+
+input::placeholder {
+  color: #686868;
+}
+
+
+small {
+  color: #b8b8b8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+.inloggegevens {
+  padding-top: 25px;
+  border-top: 1px solid #444;
+}
+
+
+/* De scheidingslijn staat boven de titel. */
+.inloggegevens legend {
+  float: left;
+  width: 100%;
+}
+
+
+.inloggegevens > .invoercontainer {
+  clear: both;
+}
+
+
+.wachtwoordveld {
+  position: relative;
+}
+
+
+.wachtwoordveld input {
+  padding-right: 85px;
+}
+
+
+.toonwachtwoord {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #555;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+.verderbutton {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+
+.knop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 16px;
+  background-color: hsl(1, 62%, 43%);
+  color: white;
+  font: inherit;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.knop:hover {
+  background-color: hsl(1, 62%, 35%);
+}
+
+
+.annuleren {
+  border: 1px solid #555;
+  background-color: #191b1c;
+}
+
+
+.annuleren:hover {
+  background-color: #292b2c;
+}
+
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #ff6565;
+  outline-offset: 3px;
+}
+
+
+@media (max-width: 600px) {
+  main {
+    padding: 25px 16px;
+  }
+
+
+  .vakje {
+    padding: 25px 20px;
+  }
+
+
+  .naamvelden {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+
+  .verderbutton {
+    flex-direction: column;
+  }
+
+
+  .knop {
+    width: 100%;
+  }
+}
+#Koptekst {
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+  padding: 20px;
+  background-color: #d60707;
+  color: white;
+}
+
+
+#Koptekst h1 {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+@media (max-width: 560px) {
+  #Koptekst {
+    min-height: 80px;
+    padding: 15px;
+  }
+
+
+  #Koptekst h1 {
+    font-size: 22px;
+  }
+}
