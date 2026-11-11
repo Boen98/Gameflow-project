@@ -5,3 +5,6 @@
 
 ## testen
 Swagger staat op `jouwpoort/swagger` 
+
+## Unit Testen
+`dotnet test`
