@@ -1,0 +1,118 @@
+body {
+  background-color: hsl(200, 6%, 7%);
+  margin: 0;
+}
+
+.paginaindeling {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+header {
+  flex: 0 0 200px;
+}
+
+nav {
+  box-sizing: border-box;
+  border-radius: 12px;
+  min-height: 100vh;
+  width: 200px;
+  background-color: hsl(0, 100%, 30%);
+  color: white;
+  font-size: 24px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 60px;
+  padding: 0 12px;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: orangered;
+}
+
+nav .actief {
+  justify-content: center;
+  width: 168px;
+  margin-left: -12px;
+  background-color: hsl(0, 100%, 60%);
+}
+
+main {
+  flex: 1;
+  min-width: 0;
+}
+
+.inhoud {
+  width: 100%;
+}
+
+.ronde {
+  color: white;
+  margin: 0 0 18px;
+  text-align: center;
+  transform: translateX(-100px);
+}
+
+.rechterkant {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.overzicht {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  transform: translateX(-100px);
+}
+
+.overzichttitel {
+  font-size: 20px;
+  color: white;
+}
+
+.overzichtdeelinfo {
+  font-size: 50px;
+  color: white;
+}
+
+.overzichtdeel {
+  box-sizing: border-box;
+  width: 250px;
+  text-align: center;
+  background-color: #191b1c;
+  border: 1px solid red;
+}
+
+.vragen {
+  display: flex;
+  gap: 20px;
+}
+
+.doelgroepmix,
+.kanaalmix {
+  width: 500px;
+  height: 60px;
+}
+.soortdoelgroep {
+  color: white;
+}
