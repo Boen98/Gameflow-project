@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Game-instellingen | Panda Restaurant Sim</title>
+
+    <link rel="stylesheet" href="game-instellingen.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <aside class="zijbalk">
+      <a class="zijbalk-logo" href="dashboard.html">
+        <span class="panda-logo" aria-hidden="true">🐼</span>
+
+        <div>
+          <strong>Panda Restaurant Sim</strong>
+          <span>Beheerpaneel</span>
+        </div>
+      </a>
+
+
+
+      <div class="beheerder">
+        <span class="avatar" aria-hidden="true">B</span>
+
+        <div>
+          <strong>Beheerder</strong>
+          <span>Beheerdersaccount</span>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="instellingencontainer">
+        <header class="paginakop">
+          <h1>Game-instellingen</h1>
+          <p>Stel de events, rondes en teams voor de game in.</p>
+        </header>
+
+        <form id="instellingenformulier">
+          <div class="vakje">
+            <fieldset>
+              <legend>Events</legend>
+
+              <div class="veldenrij">
+                <div class="invoercontainer">
+                  <label for="welke-event">Welke event</label>
+
+                  <select id="welke-event" name="Welke_event" required>
+                    <option value="" disabled selected>
+                      Selecteer een event
+                    </option>
+                    <option value="event1">Event 1</option>
+                    <option value="event2">Event 2</option>
+                    <option value="event3">Event 3</option>
+                    <option value="event4">Event 4</option>
+                    <option value="event5">Event 5</option>
+                  </select>
+                </div>
+
+                <div class="invoercontainer">
+                  <label for="aantal-events">Aantal events per ronde</label>
+
+                  <input
+                    id="aantal-events"
+                    name="AantaleventsPerRonde"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    placeholder="Bijvoorbeeld: 2"
+                    title="Vul alleen cijfers in."
+                    required
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Tijd en rondes</legend>
+
+              <div class="veldenrij">
+                <div class="invoercontainer">
+                  <label for="startsituatie-tijd">
+                    Startsituatietijd in minuten
+                  </label>
+
+                  <input
+                    id="startsituatie-tijd"
+                    name="StartSituatieTijdInMinuten"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    placeholder="Bijvoorbeeld: 5"
+                    title="Vul alleen cijfers in."
+                    required
+                  />
+                </div>
+
+                <div class="invoercontainer">
+                  <label for="aantal-rondes">Aantal ingestelde rondes</label>
+
+                  <input
+                    id="aantal-rondes"
+                    name="AantalIngesteldeRondes"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    placeholder="Bijvoorbeeld: 4"
+                    title="Vul alleen cijfers in."
+                    required
+                  />
+                </div>
+
+                <div class="invoercontainer">
+                  <label for="tijd-rondes">Tijd per ronde in minuten</label>
+
+                  <input
+                    id="tijd-rondes"
+                    name="TijdVoorRondesInMinuten"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    placeholder="Bijvoorbeeld: 15"
+                    title="Vul alleen cijfers in."
+                    required
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Teams en spelers</legend>
+
+              <div class="veldenrij">
+                <div class="invoercontainer">
+                  <label for="aantal-teams">Aantal teams</label>
+
+                  <input
+                    id="aantal-teams"
+                    name="IngesteldeAantalTeams"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    placeholder="Bijvoorbeeld: 8"
+                    title="Vul alleen cijfers in."
+                    required
+                  />
+                </div>
+
+                <div class="invoercontainer">
+                  <label for="spelers-per-team">Aantal spelers per team</label>
+
+                  <input
+                    id="spelers-per-team"
+                    name="IngesteldeAantalSpelersPerTeam"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    placeholder="Bijvoorbeeld: 5"
+                    title="Vul alleen cijfers in."
+                    required
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="formulieronderkant">
+            <p id="melding" role="status" aria-live="polite"></p>
+            <button class="opslaanknop" type="submit">
+             Game starten
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      const formulier = document.getElementById("instellingenformulier");
+      const melding = document.getElementById("melding");
+      const nummervelden = formulier.querySelectorAll('input[inputmode="numeric"]');
+      const opslagnaam = "pandaGameInstellingen";
+
+      // Laat alleen cijfers toe, ook bij geplakte tekst.
+      nummervelden.forEach((veld) => {
+        veld.addEventListener("input", () => {
+          veld.value = veld.value.replace(/[^0-9]/g, "");
+          melding.textContent = "";
+        });
+      });
+
+      formulier.addEventListener("change", () => {
+        melding.textContent = "";
+      });
+
+      // Zet eerder opgeslagen instellingen terug in het formulier.
+      try {
+        const opgeslagen = JSON.parse(localStorage.getItem(opslagnaam));
+
+        if (opgeslagen && typeof opgeslagen === "object") {
+          Array.from(formulier.elements).forEach((veld) => {
+            const waarde = opgeslagen[veld.name];
+
+            if (waarde === undefined || waarde === null) return;
+
+            if (
+              veld.tagName === "SELECT" &&
+              Array.from(veld.options).some(
+                (optie) => optie.value === String(waarde)
+              )
+            ) {
+              veld.value = String(waarde);
+            } else if (
+              veld.tagName === "INPUT" &&
+              /^[0-9]+$/.test(String(waarde))
+            ) {
+              veld.value = String(waarde);
+            }
+          });
+        }
+      } catch {
+        melding.textContent = "Eerdere instellingen konden niet worden geladen.";
+      }
+
+      formulier.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!formulier.reportValidity()) return;
+
+        const gegevens = Object.fromEntries(new FormData(formulier));
+
+        // Bewaar de numerieke velden als getallen.
+        for (const veld of nummervelden) {
+          const getal = Number(veld.value);
+
+          if (!Number.isSafeInteger(getal)) {
+            melding.textContent = "Vul een kleiner getal in.";
+            melding.className = "fout";
+            veld.focus();
+            return;
+          }
+
+          gegevens[veld.name] = getal;
+        }
+
+        try {
+          localStorage.setItem(opslagnaam, JSON.stringify(gegevens));
+          melding.textContent = "Game is gestart!";
+          melding.className = "succes";
+        } catch {
+          melding.textContent = "Game starten is mislukt. Probeer het opnieuw.";
+          melding.className = "fout";
+        }
+      });
+    </script>
+  </body>
+</html>

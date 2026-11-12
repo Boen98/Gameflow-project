@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(0, 40%, 5%);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Navigatie */
+
+.zijbalk {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 100dvh;
+  overflow-y: auto;
+  background-color: #191b1c;
+  border-right: 1px solid #65252d;
+}
+
+.zijbalk-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 25px 20px;
+  border-bottom: 1px solid #65252d;
+  color: white;
+  text-decoration: none;
+}
+
+.panda-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: hsl(1, 62%, 43%);
+  font-size: 26px;
+}
+
+.zijbalk-logo strong {
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.zijbalk-logo div > span {
+  display: block;
+  margin-top: 4px;
+  color: #b8b8b8;
+  font-size: 14px;
+}
+
+.zijbalk nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.zijbalk nav a {
+  padding: 16px 25px;
+  border-right: 3px solid transparent;
+  color: #b8b8b8;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.zijbalk nav a:hover {
+  background-color: #292b2c;
+  color: white;
+}
+
+.zijbalk nav a.actief {
+  border-right-color: #ff6565;
+  background-color: hsl(1, 62%, 43%);
+  color: white;
+}
+
+.beheerder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding: 22px 20px;
+  border-top: 1px solid #65252d;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: hsl(1, 62%, 43%);
+  font-weight: 700;
+}
+
+.beheerder strong,
+.beheerder div > span {
+  display: block;
+  font-size: 14px;
+}
+
+.beheerder div > span {
+  margin-top: 5px;
+  color: #b8b8b8;
+}
+
+/* Pagina */
+
+main {
+  margin-left: 280px;
+  padding: 50px 30px;
+}
+
+.instellingencontainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.paginakop {
+  margin-bottom: 30px;
+}
+
+.paginakop h1 {
+  margin: 0 0 12px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 26px;
+  overflow-wrap: anywhere;
+}
+
+.paginakop p {
+  margin: 0;
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+.vakje {
+  padding: 35px;
+  border: 0.5px solid hsl(0, 100%, 40%);
+  border-radius: 16px;
+  background-color: #191b1c;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0 0 30px;
+  padding: 0;
+  border: none;
+}
+
+fieldset:last-child {
+  margin-bottom: 0;
+}
+
+legend {
+  margin-bottom: 22px;
+  padding: 0;
+  color: #b8b8b8;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.veldenrij {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+}
+
+.invoercontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 9px;
+  min-width: 0;
+}
+
+label {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  color: #191b1c;
+  font: inherit;
+}
+
+input::placeholder {
+  color: #686868;
+}
+
+/* Opslaan rechtsonder het formulier */
+
+.formulieronderkant {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+#melding {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.succes {
+  color: #9be3ac;
+}
+
+.fout {
+  color: #ff9494;
+}
+
+.opslaanknop {
+  min-height: 44px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 16px;
+  background-color: hsl(1, 62%, 43%);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.opslaanknop:hover {
+  background-color: hsl(1, 62%, 35%);
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 2px solid #ff6565;
+  outline-offset: 3px;
+}
+
+.zijbalk a:focus-visible {
+  outline: 2px solid #ff6565;
+  outline-offset: -4px;
+}
+
+/* Tablet en mobiel */
+
+@media (max-width: 800px) {
+  .zijbalk {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #65252d;
+  }
+
+  .zijbalk nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .zijbalk nav a {
+    padding: 12px;
+    border-right: none;
+    border-radius: 6px;
+  }
+
+  .beheerder {
+    padding: 15px 20px;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 30px 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .vakje {
+    padding: 25px 20px;
+  }
+
+  .veldenrij {
+    grid-template-columns: 1fr;
+  }
+
+  .paginakop h1 {
+    font-size: 22px;
+  }
+
+  .formulieronderkant {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .opslaanknop {
+    width: 100%;
+  }
+}
