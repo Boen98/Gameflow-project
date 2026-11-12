@@ -25,18 +25,22 @@ body {
   margin: 0 auto;
   background-color: #191b1c;
   height: 400px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
 }
 
 .logo,
 .invoer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .invoercontainer {
   display: flex;
+  flex-direction: column;
   padding-bottom: 10px;
   margin: auto;
+  gap: 20px;
   padding-left: 10px;
   width: 200px;
 }
@@ -44,7 +48,7 @@ body {
 .gamenaam {
   color: white;
   text-align: center;
-  flex-direction: row;
+  flex-direction: column;
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
 }
@@ -62,7 +66,7 @@ body {
 .verderbutton {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 }
 
 button {
@@ -80,4 +84,53 @@ button {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .vakje {
+    top: 50%;
+    width: calc(100% - 32px);
+    max-width: 350px;
+    height: auto;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    padding: 16px;
+    transform: translateY(-50%);
+  }
+
+  .buttons {
+    width: 100%;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .invoercontainer {
+    width: 100%;
+    max-width: 200px;
+    padding-left: 0;
+  }
+
+  .invoer {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .verderbutton {
+    width: 100%;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-height: 560px) {
+  .vakje {
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    transform: none;
+  }
 }
