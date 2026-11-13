@@ -59,8 +59,8 @@ body {
   border-style: none;
 }
 
-#titeldeel {
-  opacity: 40%;
+.titeldeel {
+  opacity: 0.4;
 }
 
 .verderbutton {
