@@ -1,3 +1,4 @@
+import {Routes, Route} from "react-router"
 import JoinTeamPagina from "./pages/JoinTeamPagina";
 
 

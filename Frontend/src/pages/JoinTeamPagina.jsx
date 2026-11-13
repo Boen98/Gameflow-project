@@ -1,5 +1,6 @@
 import "./startscherm.css";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function JoinTeamPagina() {
   const [gamesessie, setGamesessie] = useState("");
@@ -18,23 +19,24 @@ export default function JoinTeamPagina() {
     try {
       const response = await fetch("http://localhost:5104/teams/join", {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           teamcode: teamcode,
-          gamesessie: Number(gamesessie),
+          gamecode: Number(gamesessie),
         }),
       });
 
       if (!response.ok) {
         setFoutmelding("Gamesessie of teamcode klopt niet.");
       }
-      setFoutmelding("Gamesessie gejoined!");
+      setFoutmelding(response.statusText);
 
 
     } catch (error) {
-      setFoutmelding("Er is een fout opgetreden bij het joinen van het team.");
+      setFoutmelding(error.message);
     }
   } 
 
@@ -65,11 +67,7 @@ export default function JoinTeamPagina() {
               onChange={(event) => setTeamcode(event.target.value)}
               maxLength={4}
             />
-            {foutmelding && (
-              <p style={{ color: "#ff4d4d", fontSize: "13px", textAlign: "center", margin: 0 }}>
-                {foutmelding}
-              </p>
-            )}
+            {foutmelding && (<p style={{ color: "#ff4d4d", fontSize: "13px", textAlign: "center", margin: 0 }}>{foutmelding}</p>)}
           </div>
           <div className="verderbutton">
             <button type="submit">Join</button>

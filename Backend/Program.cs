@@ -27,6 +27,16 @@ var connectionString = builder.Configuration.GetConnectionString("Database");
 
     builder.Services.AddIdentityApiEndpoints<User>().AddRoles<IdentityRole>().AddEntityFrameworkStores<GameFlowDb>();
 
+    builder.Services.AddCors(options => 
+    options.AddDefaultPolicy(builder =>
+    {
+        options.AddPolicy("Frontend", policy => 
+        policy.WithOrigins("http://localhost:5173").
+                AllowCredentials()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+    }));
+
 var app = builder.Build();
 
 
@@ -45,4 +55,6 @@ app.MapGroup("/auth").MapIdentityApi<User>();
 app.MapTeamEndpoints();
 app.MapGameSessiesEndpoints();
 await DbSeeder.SeedAsync(app.Services);
+
+app.UseCors("Frontend");
 app.Run();
