@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(200, 6%, 7%);
+}
+
+.vakje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-color: hsl(0, 100%, 40%);
+  border-radius: 16px;
+  border-width: 0.5px;
+  width: 350px;
+  padding: 20px;
+  overflow: hidden;
+  position: fixed;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #191b1c;
+  height: 400px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.logo,
+.invoer {
+  display: flex;
+  flex-direction: row;
+}
+
+.invoercontainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  margin: auto;
+  gap: 20px;
+  padding-left: 10px;
+  width: 200px;
+}
+
+.gamenaam {
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+}
+
+.invoer {
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+}
+
+#titeldeel {
+  opacity: 40%;
+}
+
+.verderbutton {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  border-style: none;
+  border-radius: 16px;
+  color: white;
+  background-color: hsl(1, 62%, 43%);
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+  max-height: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .vakje {
+    top: 50%;
+    width: calc(100% - 32px);
+    max-width: 350px;
+    height: auto;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    padding: 16px;
+    transform: translateY(-50%);
+  }
+
+  .buttons {
+    width: 100%;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .invoercontainer {
+    width: 100%;
+    max-width: 200px;
+    padding-left: 0;
+  }
+
+  .invoer {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .verderbutton {
+    width: 100%;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-height: 560px) {
+  .vakje {
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    transform: none;
+  }
+}
