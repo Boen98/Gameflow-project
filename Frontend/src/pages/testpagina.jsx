@@ -1,0 +1,7 @@
+export default function testpagina (){
+ return(
+    <main>
+        <h1>Welcome to page 2</h1>
+    </main>
+ );
+}

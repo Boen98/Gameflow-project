@@ -6,6 +6,7 @@ export default function JoinTeamPagina() {
   const [gamesessie, setGamesessie] = useState("");
   const [teamcode, setTeamcode] = useState("");
   const [foutmelding, setFoutmelding] = useState("");
+  const navigate = useNavigate();
 
   async function joinTeam(event) {
     //zorgt ervoor dat de pagina niet herlaadt bij het submitten van het form
@@ -32,7 +33,7 @@ export default function JoinTeamPagina() {
       if (!response.ok) {
         setFoutmelding("Gamesessie of teamcode klopt niet.");
       }
-      setFoutmelding(response.statusText);
+      navigate("/test");
 
 
     } catch (error) {
