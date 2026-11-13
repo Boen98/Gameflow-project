@@ -50,7 +50,7 @@ namespace RestauarntMinimalApi.Migrations
 
                     b.HasKey("GameSessieId");
 
-                    b.ToTable("gameSessies");
+                    b.ToTable("gameSessies", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -219,7 +219,7 @@ namespace RestauarntMinimalApi.Migrations
                     b.HasIndex("GameSessieId", "Teamcode")
                         .IsUnique();
 
-                    b.ToTable("teams");
+                    b.ToTable("teams", (string)null);
                 });
 
             modelBuilder.Entity("TeamLid", b =>
@@ -244,7 +244,7 @@ namespace RestauarntMinimalApi.Migrations
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("TeamLid");
+                    b.ToTable("TeamLid", (string)null);
                 });
 
             modelBuilder.Entity("User", b =>
