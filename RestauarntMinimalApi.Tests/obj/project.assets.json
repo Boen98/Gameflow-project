@@ -3572,19 +3572,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {}
+    "C:\\Users\\yassi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Desktop\\project\\Gameflow-project\\RestauarntMinimalApi.Tests\\RestauarntMinimalApi.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\yassi\\Desktop\\Gameflow-project\\RestauarntMinimalApi.Tests\\RestauarntMinimalApi.Tests.csproj",
       "projectName": "RestauarntMinimalApi.Tests",
-      "projectPath": "C:\\Users\\PC\\Desktop\\project\\Gameflow-project\\RestauarntMinimalApi.Tests\\RestauarntMinimalApi.Tests.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Desktop\\project\\Gameflow-project\\RestauarntMinimalApi.Tests\\obj\\",
+      "projectPath": "C:\\Users\\yassi\\Desktop\\Gameflow-project\\RestauarntMinimalApi.Tests\\RestauarntMinimalApi.Tests.csproj",
+      "packagesPath": "C:\\Users\\yassi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yassi\\Desktop\\Gameflow-project\\RestauarntMinimalApi.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\yassi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -3597,8 +3597,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\PC\\Desktop\\project\\Gameflow-project\\Backend\\RestauarntMinimalApi.csproj": {
-              "projectPath": "C:\\Users\\PC\\Desktop\\project\\Gameflow-project\\Backend\\RestauarntMinimalApi.csproj"
+            "C:\\Users\\yassi\\Desktop\\Gameflow-project\\Backend\\RestauarntMinimalApi.csproj": {
+              "projectPath": "C:\\Users\\yassi\\Desktop\\Gameflow-project\\Backend\\RestauarntMinimalApi.csproj"
             }
           }
         }
