@@ -21,33 +21,33 @@ export default function JoinTeamPagina() {
     }
 
     try {
-      const response = await fetch(apiUrl + "/teams/join", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          teamcode: teamcode,
-          gamecode: Number(gamesessie),
-        }),
-      });
+     const response = await fetch(apiUrl + "/teams/join", {
+     method: "POST",
+     credentials: "include",
+     headers: {
+    "Content-Type": "application/json",
+  },
+     body: JSON.stringify({
+     teamcode: teamcode,
+     gamecode: Number(gamesessie),
+  }),
+});
 
-      if (!response.ok) {
-        setFoutmelding("Je kon niet aan dit team worden toegevoegd.");
-        return;
-      }
+if (!response.ok) {
+  setFoutmelding("Je kon niet aan dit team worden toegevoegd.");
+  return;
+}
 
-      const bestemming = await haalBestemmingOp();
+const bestemming = await haalBestemmingOp();
 
-      if (bestemming === "/join") {
-        setFoutmelding(
-          "Je spelersrol is nog niet zichtbaar. Log opnieuw in."
-        );
-        return;
-      }
+if (bestemming === "/join") {
+  setFoutmelding(
+    "Je spelersrol is nog niet zichtbaar. Log opnieuw in."
+  );
+  return;
+}
 
-      navigate(bestemming, { replace: true });
+navigate(bestemming, { replace: true });v
     } catch (error) {
       setFoutmelding(error.message);
     }

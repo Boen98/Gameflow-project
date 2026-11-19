@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import { haalBestemmingOp } from "./account";
+
 import JoinTeamPagina from "./pages/JoinTeamPagina";
 import LoginPagina from "./pages/LoginPagina";
+import RegistratiePagina from "./pages/RegistratiePagina";
 import Testpagina from "./pages/testpagina";
 
 function BeschermdePagina({ pad, children }) {
@@ -14,10 +16,14 @@ function BeschermdePagina({ pad, children }) {
 
     haalBestemmingOp()
       .then((route) => {
-        if (actief) setBestemming(route);
+        if (actief) {
+          setBestemming(route);
+        }
       })
       .catch(() => {
-        if (actief) setFout(true);
+        if (actief) {
+          setFout(true);
+        }
       });
 
     return () => {
@@ -28,8 +34,8 @@ function BeschermdePagina({ pad, children }) {
   if (fout) {
     return (
       <p role="alert">
-        Aanmelding controleren lukt niet. Vernieuw de pagina om het
-        opnieuw te proberen.
+        Aanmelding controleren lukt niet.
+        Vernieuw de pagina om het opnieuw te proberen.
       </p>
     );
   }
@@ -48,7 +54,10 @@ function BeschermdePagina({ pad, children }) {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<LoginPagina />} />
+      <Route
+        path="/"
+        element={<LoginPagina />}
+      />
 
       <Route
         path="/join"
@@ -63,9 +72,7 @@ export default function App() {
         path="/admin"
         element={
           <BeschermdePagina key="admin" pad="/admin">
-            <main>
-              <h1>Beheerscherm</h1>
-            </main>
+            <RegistratiePagina />
           </BeschermdePagina>
         }
       />
@@ -74,7 +81,7 @@ export default function App() {
         path="/speler"
         element={
           <BeschermdePagina key="speler" pad="/speler">
-            <Testpagina />
+            <JoinTeamPagina />
           </BeschermdePagina>
         }
       />

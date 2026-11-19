@@ -5,6 +5,7 @@ import "./login.css";
 
 export default function LoginPagina() {
   const navigate = useNavigate();
+
   const [zichtbaar, setZichtbaar] = useState(false);
   const [bezig, setBezig] = useState(false);
   const [fout, setFout] = useState("");
@@ -13,21 +14,25 @@ export default function LoginPagina() {
     event.preventDefault();
 
     const formulier = new FormData(event.currentTarget);
+
     setFout("");
     setBezig(true);
 
     try {
-      const antwoord = await fetch(apiUrl + "/auth/login?useCookies=true", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formulier.get("email").trim(),
-          password: formulier.get("password"),
-        }),
-      });
+      const antwoord = await fetch(
+        apiUrl + "/auth/login?useCookies=true",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formulier.get("email").trim(),
+            password: formulier.get("password"),
+          }),
+        }
+      );
 
       if (!antwoord.ok) {
         setFout("Inloggen lukt niet. Controleer je gegevens.");
@@ -43,22 +48,29 @@ export default function LoginPagina() {
 
       navigate(bestemming, { replace: true });
     } catch {
-      setFout("De aanmelding kon niet worden gecontroleerd. Probeer opnieuw.");
+      setFout(
+        "De aanmelding kon niet worden gecontroleerd. Probeer opnieuw."
+      );
     } finally {
       setBezig(false);
     }
   }
-
+//opdrachtgever@gameflow.test
+//Admin123!
   return (
     <main className="layout login-view">
       <section className="intro" aria-labelledby="intro-title">
         <div className="brand brand--light">
-          <span className="brand__icon" aria-hidden="true">🐼</span>
+          <span className="brand__icon" aria-hidden="true">
+            🐼
+          </span>
           <span>Panda Restaurant</span>
         </div>
 
         <div className="intro__content">
-          <p className="eyebrow">GAMEFLOW · BUSINESS SIMULATION</p>
+          <p className="eyebrow">
+            GAMEFLOW · BUSINESS SIMULATION
+          </p>
 
           <h1 id="intro-title">
             Jij maakt de keuzes.
@@ -86,15 +98,24 @@ export default function LoginPagina() {
         </p>
       </section>
 
-      <section className="login-area" aria-labelledby="login-title">
+      <section
+        className="login-area"
+        aria-labelledby="login-title"
+      >
         <div className="login-card">
           <div className="brand brand--small">
-            <span className="brand__icon" aria-hidden="true">🐼</span>
+            <span className="brand__icon" aria-hidden="true">
+              🐼
+            </span>
             <span>Panda Restaurant</span>
           </div>
 
-          <p className="eyebrow eyebrow--green">WELKOM TERUG</p>
+          <p className="eyebrow eyebrow--green">
+            WELKOM TERUG
+          </p>
+
           <h2 id="login-title">Inloggen</h2>
+
           <p className="subtitle">
             Log in om jouw simulatie te bekijken.
           </p>
@@ -102,6 +123,7 @@ export default function LoginPagina() {
           <form onSubmit={inloggen}>
             <div className="field">
               <label htmlFor="email">E-mailadres</label>
+
               <input
                 id="email"
                 name="email"
@@ -136,8 +158,8 @@ export default function LoginPagina() {
                       : "Wachtwoord tonen"
                   }
                   aria-pressed={zichtbaar}
-                  onClick={() => setZichtbaar(!zichtbaar)}
                   aria-controls="password"
+                  onClick={() => setZichtbaar(!zichtbaar)}
                 >
                   {zichtbaar ? "Verbergen" : "Tonen"}
                 </button>
@@ -150,6 +172,7 @@ export default function LoginPagina() {
               disabled={bezig}
             >
               {bezig ? "Bezig…" : "Inloggen"}
+
               <span aria-hidden="true">→</span>
             </button>
 

@@ -51,6 +51,7 @@ app.UseAuthorization();
 
 app.MapGroup("/auth").MapIdentityApi<User>();
 
+app.MapMaakSpelerEndpoint();
 app.MapTeamEndpoints();
 app.MapGameSessiesEndpoints();
 
