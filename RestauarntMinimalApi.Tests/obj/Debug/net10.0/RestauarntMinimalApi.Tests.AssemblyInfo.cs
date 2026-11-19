@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RestauarntMinimalApi.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbe8ac8e38de52da9fbedf3df76394442eed5f10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d91b28314170432cf574b956188c6d810993ed2a")]
 [assembly: System.Reflection.AssemblyProductAttribute("RestauarntMinimalApi.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RestauarntMinimalApi.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
