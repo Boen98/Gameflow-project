@@ -3,6 +3,7 @@ public class GameSessie
      public int GameSessieId { get; set; }
     public string GameStatus { get; set; } = "";
     public List<Team>? GekopeldeTeams { get; set; }
+    public List<Ronde> Rondes { get; set; } = new();
     
     // wat ingevult gaat worden door de beheerder
     public int StartSituatieTijd { get; set; }

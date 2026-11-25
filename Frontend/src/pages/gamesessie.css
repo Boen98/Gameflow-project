@@ -1,0 +1,97 @@
+.gamesessie-pagina {
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 30px 20px;
+    color: #222;
+}
+
+.gamesessie-pagina h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.gamesessie-formulier {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gamesessie-formulier > div {
+    margin-bottom: 18px;
+}
+
+.gamesessie-formulier label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.gamesessie-formulier input,
+.gamesessie-formulier select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: white;
+    color: #222;
+    font-size: 16px;
+}
+
+.gamesessie-formulier h2 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.gamesessie-formulier .ronde-instellingen {
+    background-color: #f8fafc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.gamesessie-formulier button {
+    width: 100%;
+    padding: 14px;
+    background-color: #b91c1c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.gamesessie-formulier button:hover {
+    background-color: #991b1b;
+}
+
+.gamesessie-formulier input:focus-visible,
+.gamesessie-formulier select:focus-visible,
+.gamesessie-formulier button:focus-visible {
+    outline: 2px solid #b91c1c;
+    outline-offset: 3px;
+}
+
+.gamesessie-formulier .foutmelding {
+    color: #b91c1c;
+    background-color: #fee2e2;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.gamesessie-formulier .succesmelding {
+    color: #166534;
+    background-color: #dcfce7;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+    .gamesessie-formulier {
+        padding: 18px;
+    }
+}

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Navigate, Route, Routes } from "react-router";
+import { Link, Navigate, Route, Routes } from "react-router";
 import { haalBestemmingOp } from "./account";
 
 import JoinTeamPagina from "./pages/JoinTeamPagina";
 import LoginPagina from "./pages/LoginPagina";
 import RegistratiePagina from "./pages/RegistratiePagina";
 import Testpagina from "./pages/testpagina";
+import GameSessieAanmakenPagina from "./pages/GameSessieAanmakenPagina";
 
 function BeschermdePagina({ pad, children }) {
   const [bestemming, setBestemming] = useState(null);
@@ -68,14 +69,29 @@ export default function App() {
         }
       />
 
-      <Route
-        path="/admin"
-        element={
-          <BeschermdePagina key="admin" pad="/admin">
-            <RegistratiePagina />
-          </BeschermdePagina>
-        }
-      />
+<Route
+    path="/admin"
+    element={
+        <BeschermdePagina key="admin" pad="/admin">
+            <>
+                <Link to="/admin/gamesessies">
+                    Gamesessie aanmaken
+                </Link>
+
+                <RegistratiePagina />
+            </>
+        </BeschermdePagina>
+    }
+/>
+
+<Route
+    path="/admin/gamesessies"
+    element={
+        <BeschermdePagina key="gamesessies" pad="/admin">
+            <GameSessieAanmakenPagina />
+        </BeschermdePagina>
+    }
+/>
 
       <Route
         path="/speler"
