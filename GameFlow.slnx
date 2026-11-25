@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Frontend/">
+  </Folder>
+  <Folder Name="/Backend/">
+    <Project Path="Backend/RestauarntMinimalApi.csproj" />
+  </Folder>
+  <Project Path="RestauarntMinimalApi.Tests/RestauarntMinimalApi.Tests.csproj" />
+</Solution>

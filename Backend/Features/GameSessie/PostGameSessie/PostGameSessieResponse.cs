@@ -1,0 +1,1 @@
+public record PostGameSessieResponse(int Id,int startSituatieTijd,int aantalIngesteldeRondes,int tijdVoorRondesInMinuten, int ingesteldeAantalTeams, int ingesteldeAantalSpelersPerTeam);
