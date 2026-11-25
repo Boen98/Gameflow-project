@@ -1,0 +1,10 @@
+# .NET build files
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# Node.js
+node_modules/
+dist/
