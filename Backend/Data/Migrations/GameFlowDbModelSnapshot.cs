@@ -50,7 +50,7 @@ namespace RestauarntMinimalApi.Migrations
 
                     b.HasKey("GameSessieId");
 
-                    b.ToTable("gameSessies", (string)null);
+                    b.ToTable("gameSessies");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -186,6 +186,34 @@ namespace RestauarntMinimalApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Ronde", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GameSessieId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("GeplandeStartMoment")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsAfgesloten")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Nummer")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameSessieId", "Nummer")
+                        .IsUnique();
+
+                    b.ToTable("rondes");
+                });
+
             modelBuilder.Entity("Team", b =>
                 {
                     b.Property<int>("Id")
@@ -219,7 +247,7 @@ namespace RestauarntMinimalApi.Migrations
                     b.HasIndex("GameSessieId", "Teamcode")
                         .IsUnique();
 
-                    b.ToTable("teams", (string)null);
+                    b.ToTable("teams");
                 });
 
             modelBuilder.Entity("TeamLid", b =>
@@ -244,7 +272,7 @@ namespace RestauarntMinimalApi.Migrations
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("TeamLid", (string)null);
+                    b.ToTable("TeamLid");
                 });
 
             modelBuilder.Entity("User", b =>
@@ -363,6 +391,15 @@ namespace RestauarntMinimalApi.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Ronde", b =>
+                {
+                    b.HasOne("GameSessie", null)
+                        .WithMany("Rondes")
+                        .HasForeignKey("GameSessieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Team", b =>
                 {
                     b.HasOne("GameSessie", null)
@@ -384,6 +421,8 @@ namespace RestauarntMinimalApi.Migrations
             modelBuilder.Entity("GameSessie", b =>
                 {
                     b.Navigation("GekopeldeTeams");
+
+                    b.Navigation("Rondes");
                 });
 
             modelBuilder.Entity("Team", b =>

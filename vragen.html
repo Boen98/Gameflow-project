@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vragen</title>
+    <link rel="stylesheet" href="vragen.css" />
+  </head>
+  <body>
+    <div class="paginaindeling">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="dashboard.html">dashboard</a></li>
+            <li><a href="marktinformatie.html">marktinformatie</a></li>
+            <li><a class="actief" href="beslissingen.html">beslissingen</a></li>
+            <li><a href="resultaten.html">resultaten</a></li>
+            <li><a href="rapportages.html">rapportages</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="inhoud">
+          <h1 class="ronde" id="ronde">Ronde 1 | beslissingen</h1>
+          <p class="uitleg">maak hieronder de keuzes voor de komende ronde</p>
+          <div class="overzicht">
+            <div class="overzichtdeel">
+              <h2 class="overzichttitel">startbudget</h2>
+              <h3 class="overzichtdeelinfo" id="startbudget">€ 500.000</h3>
+            </div>
+            <div class="overzichtdeel">
+              <h2 class="overzichttitel">verwachte bezoekers</h2>
+              <h3 class="overzichtdeelinfo" id="verwachtebezoekers">25.000</h3>
+            </div>
+            <div class="overzichtdeel">
+              <h2 class="overzichttitel">beschikbaar na keuzes</h2>
+              <h3 class="overzichtdeelinfo" id="beschikbaar">€ 178.000</h3>
+            </div>
+          </div>
+          <div class="vragen">
+            <div class="blok doelgroepmix">
+              <h3 class="bloktitel">doelgroep</h3>
+              <p class="blokuitleg">kies de doelgroep waar je park zich op richt</p>
+              <div class="dropdown">
+                <button type="button" class="doelgroepknop" id="doelgroepknop">
+                  Kies doelgroep
+                </button>
+                <div class="dropdownknoppen">
+                  <button type="button" class="levensfase" id="levensfase">
+                    Levensfase
+                  </button>
+                  <button type="button" class="lokaleklanten" id="lokaleklanten">
+                    Lokale klanten
+                  </button>
+                  <button type="button" class="rijkeklanten" id="rijkeklanten">
+                    Rijke klanten
+                  </button>
+                  <button type="button" class="stellen" id="stellen">
+                    Stellen
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="blok entree">
+              <h3 class="bloktitel">entree & horeca</h3>
+              <p class="blokuitleg">bepaal de entreeprijs en het budget voor horeca</p>
+              <div class="velden">
+                <label>
+                  entreeprijs
+                  <span class="invoer euro">
+                    <input type="number" id="entreeprijs" min="0" step="0.5" value="29.50" />
+                  </span>
+                </label>
+                <label>
+                  horecabudget
+                  <span class="invoer euro">
+                    <input type="number" id="horeca" min="0" step="1000" value="20000" />
+                  </span>
+                </label>
+              </div>
+              <p class="info">
+                verwachte entree-inkomsten: <strong id="inkomsten">€ 737.500</strong>
+              </p>
+            </div>
+            <div class="blok marketing">
+              <h3 class="bloktitel">marketing</h3>
+              <p class="blokuitleg">kies het campagnebudget en verdeel het over de kanalen</p>
+              <div class="velden">
+                <label>
+                  campagnebudget
+                  <span class="invoer euro">
+                    <input type="number" id="campagne" min="0" step="1000" value="45000" />
+                  </span>
+                </label>
+              </div>
+              <div class="velden drie">
+                <label>
+                  social media
+                  <span class="invoer procent">
+                    <input type="number" class="kanaal" id="social" min="0" max="100" value="45" />
+                  </span>
+                </label>
+                <label>
+                  zoekmachines
+                  <span class="invoer procent">
+                    <input type="number" class="kanaal" id="zoek" min="0" max="100" value="30" />
+                  </span>
+                </label>
+                <label>
+                  regionale media
+                  <span class="invoer procent">
+                    <input type="number" class="kanaal" id="regionaal" min="0" max="100" value="25" />
+                  </span>
+                </label>
+              </div>
+              <div class="balk" id="kanaalbalk">
+                <span class="deel deel1" style="width: 45%">45%</span>
+                <span class="deel deel2" style="width: 30%">30%</span>
+                <span class="deel deel3" style="width: 25%">25%</span>
+              </div>
+              <p class="info" id="kanaaltotaal">totaal: 100%</p>
+            </div>
+            <div class="blok personeel">
+              <h3 class="bloktitel">personeel</h3>
+              <p class="blokuitleg">stel het aantal medewerkers in en bepaal het opleidingsbudget</p>
+              <div class="velden">
+                <label>
+                  medewerkers
+                  <span class="invoer">
+                    <input type="number" id="medewerkers" min="0" step="1" value="35" />
+                  </span>
+                </label>
+                <label>
+                  opleidingsbudget
+                  <span class="invoer euro">
+                    <input type="number" id="opleiding" min="0" step="1000" value="12000" />
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="blok onderhoud">
+              <h3 class="bloktitel">attracties & onderhoud</h3>
+              <p class="blokuitleg">investeer in nieuwe attracties en plan het onderhoud</p>
+              <div class="velden">
+                <label>
+                  nieuwe attractie
+                  <span class="invoer euro">
+                    <input type="number" id="attractie" min="0" step="5000" value="180000" />
+                  </span>
+                </label>
+                <label>
+                  onderhoud
+                  <span class="invoer euro">
+                    <input type="number" id="onderhoudbudget" min="0" step="5000" value="65000" />
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="blok uitgaven">
+              <h3 class="bloktitel">overzicht uitgaven</h3>
+              <div class="lijst">
+                <p class="lijstnaam">horeca</p>
+                <p class="lijstbedrag" id="u-horeca">€ 20.000</p>
+                <p class="lijstnaam">marketing</p>
+                <p class="lijstbedrag" id="u-marketing">€ 45.000</p>
+                <p class="lijstnaam">personeel</p>
+                <p class="lijstbedrag" id="u-personeel">€ 12.000</p>
+                <p class="lijstnaam">attracties & onderhoud</p>
+                <p class="lijstbedrag" id="u-attracties">€ 245.000</p>
+                <p class="lijstnaam totaal">totaal uitgaven</p>
+                <p class="lijstbedrag totaal" id="u-totaal">€ 322.000</p>
+              </div>
+              <div class="knoppen">
+                <button type="button" class="knop" id="opslaan">beslissingen opslaan</button>
+                <button type="button" class="knop hoofdknop" id="indienen">ronde indienen</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="vragen.js"></script>
+</html>

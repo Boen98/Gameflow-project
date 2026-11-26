@@ -18,4 +18,5 @@ public class PostGameSessieDTO
     [Required]
     [Range(1, int.MaxValue)]
     public int IngesteldeAantalSpelersPerTeam { get; set; }
+    public List<DateTimeOffset> Startdatums { get; set; } = new();
 }
